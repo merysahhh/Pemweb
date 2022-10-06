@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Produk</title>
+        <style>
+            body {
+                background-color: rgb(255, 240, 192);
+            }
+            #sepatu1{
+                color:  rgb(5, 4, 5);
+            }
+
+            h3{
+                color: #285049;
+            }
+            h1{
+                color: #076d5a;
+            }
+            .box{
+            width: 210px;
+                border: 1px solid;
+            
+            }
+        </style>
+    </head>
+    <body>
+       <center>
+        <h1>Toko Buku Mars</h1>
+        <div class="desain-layout">
+            <div class="box">
+                <img width="200"src="Bumi.jpg" alt="">
+                <h3 id="sepatu1">
+                    Bumi
+                </h3>
+                <p>Tere Liye</p>
+                
+            </div>
+        </div>
+        <p>Pilih :</p>
+        <form action="detail-produk.html" method="get">
+        <label for="metode-pembayaran"> Metode Pembayaran :</label>
+        <select name="metode-pembayaran" id="metode-pembayaran">
+            <option value="cod">COD</option>
+            <option value="debit">Debit</option>
+            <option value="ovo">OVO</option>
+            <option value="bank">BANK</option>
+          </select><br>
+        <label for="jumlah-buku">Jumlah Buku :</label>
+        <input type="number" name="jumlah-buku">
+        <button type="submit">Pesan</button>
+    </form>
+    </center>
+    </body>
+</html>
