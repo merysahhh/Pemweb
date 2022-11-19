@@ -6,12 +6,12 @@
         <th> Program Studi </th>
     </tr>
 <?php
-include "koneksi.php";
-$query = "SELECT * FROM mahasiswa ORDER BY nim ASC";
-$result = mysqli_query($connection, $query);
-$i = 0;
-while ($data = mysqli_fetch_array($result)) :
-$i++;
+    include "koneksi.php";
+    $query = "SELECT * FROM mahasiswa ORDER BY nim ASC";
+    $result = mysqli_query($connection, $query);
+    $i = 0;
+    while ($data = mysqli_fetch_array($result)) :
+    $i++;
 ?>
     <tr>
         <td> <?= $i ?> </td>
@@ -23,3 +23,26 @@ $i++;
 endwhile
 ?>
 </table>
+<script>
+    $('#prodi').on('change', function () {
+
+        var data = this.value;
+
+        var jo = $("tbody").find("tr");
+        if (this.value == "Semua Prodi") {
+            jo.show();
+            return;
+        }
+        jo.hide();
+
+        jo.filter(function (i, v) {
+            var $t = $(this);
+
+            if ($t.is(":contains('" + data + "')")) {
+                return true;
+            }
+    
+            return false;
+        }).show();
+    });
+</script>
